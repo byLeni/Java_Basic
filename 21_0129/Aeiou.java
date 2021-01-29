@@ -21,21 +21,25 @@ public class Aeiou {
             string = string.toLowerCase();
             // 대문자를 소문자로 변환시켜줘야한다. 컴퓨터는 대/소문자가 같다고 인식하지 못한다.
             char c = string.charAt(i);
-            int hasVowels = VOWELS.indexOf(c);
 
-            switch (hasVowels) {
-                case -1:
-                    if (consonant.indexOf(c) == -1) {
-                        consonant += c + " ";
-                        consonantCount++;
-                    }
-                    break;
-                default:
-                    if (vowels.indexOf(c) == -1) {
-                        vowels += c + " ";
-                        vowelsCount++;
-                    }
-                    break;
+            if (97 < (int) c && (int) c < 122) {
+                int hasVowels = VOWELS.indexOf(c);
+                // 영자빼고 다른 특문이나 한글들을 다 걸러주자!
+
+                switch (hasVowels) {
+                    case -1:
+                        if (consonant.indexOf(c) == -1) {
+                            consonant += c + " ";
+                            consonantCount++;
+                        }
+                        break;
+                    default:
+                        if (vowels.indexOf(c) == -1) {
+                            vowels += c + " ";
+                            vowelsCount++;
+                        }
+                        break;
+                }
             }
         }
         
