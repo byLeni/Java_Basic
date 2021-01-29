@@ -21,7 +21,7 @@ public class WeightScale {
         int remainder = (int)(weight - standWeight);
         if (10 < remainder){
             System.out.println("과체중입니다.");
-        } else if (-10 > remainder) {
+        } else if (remainder < -10 ) {
             System.out.println("저체중입니다.");
         } else {
             System.out.println("표준입니다!");
