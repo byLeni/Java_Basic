@@ -18,6 +18,8 @@ public class Aeiou {
 
         for (int i = 0; i < string.length(); i++) {
 
+            string = string.toLowerCase();
+            // 대문자를 소문자로 변환시켜줘야한다. 컴퓨터는 대/소문자가 같다고 인식하지 못한다.
             char c = string.charAt(i);
             int hasVowels = VOWELS.indexOf(c);
 
