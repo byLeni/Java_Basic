@@ -7,34 +7,37 @@ public class Aeiou {
         String vowels = ""; // 모음
         String consonant = ""; // 자음
 
-        System.out.print("영문자를 하나 입력하세요 >> ");
+        int vowelsCount = 0;
+        int consonantCount = 0;
+
+        final String VOWELS = "aeiou";
+
+        System.out.println("중복을 제외한 영문장의 자/모음을 구분하고 자/모음과 각 갯수를 출력합니다.");
+        System.out.print(" >> ");
         string = new Scanner(System.in).nextLine();
 
         for (int i = 0; i < string.length(); i++) {
+
             char c = string.charAt(i);
-            switch (c) {
-                case 'a':
-                    consonant += c + " ";
-                    break;
-                case 'e':
-                    consonant += c + " ";
-                    break;
-                case 'i':
-                    consonant += c + " ";
-                    break;
-                case 'o':
-                    consonant += c + " ";
-                    break;
-                case 'u':
-                    consonant += c + " ";
+            int hasVowels = VOWELS.indexOf(c);
+
+            switch (hasVowels) {
+                case -1:
+                    if (consonant.indexOf(c) == -1) {
+                        consonant += c + " ";
+                        consonantCount++;
+                    }
                     break;
                 default:
-                    vowels += c + " ";
+                    if (vowels.indexOf(c) == -1) {
+                        vowels += c + " ";
+                        vowelsCount++;
+                    }
                     break;
             }
         }
         
-        System.out.println("모음 >> " + vowels);
-        System.out.println("자음 >> " + consonant);      
+        System.out.println("모음 >> " + vowels + " ( " + vowelsCount + " )");
+        System.out.println("자음 >> " + consonant + " ( " + consonantCount + " )");     
     }
 }
