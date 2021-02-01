@@ -65,7 +65,7 @@ public class PrintStarts {
             star += "**";
             space--;
         }
-        }
+    }
         
         public static void question6() {
         /*
@@ -84,7 +84,7 @@ public class PrintStarts {
             System.out.println(star);
             space++;
         }
-        }
+    }
         
         public static void question7() {
         /* 
