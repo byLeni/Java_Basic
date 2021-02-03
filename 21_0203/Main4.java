@@ -1,73 +1,29 @@
+import java.util.Random;
 import java.util.Scanner;
 
 /*
- * 1. 사용자가 입력한 정수 값의 팩토리얼을 구하시요. 
- * 2. 피보나치 수열
- * 3. 소수 구하기
+ * 1. 사용자가 입력한 정수만큼의 길이를 가지는 배열을 생성.
+ * 2. 사용자가 입력한 길이만큼 반복하여. 원소값을 대입연산 해보세요.
  */
+
 public class Main4 {
     
     public static void main(String[] args) {
-
+        
         Scanner input = new Scanner(System.in);
 
-        int x;
-        int max;
+        System.out.print("배열의 길이를 입력해주세요 ▷ ");
+        int length = input.nextInt();
+        int[] arr = new int[length];
 
-        // System.out.print("팩토리얼 계산! 정수입력 >> ");
-        // x = input.nextInt();
-        // System.out.printf("%d! = %d\n", x, factorial(x));
+        input.close();
 
-        // System.out.println("");
-        // System.out.printf("피보나치 수열을 출력! max 범위 값은? ");
-        // max = input.nextInt();
-        // fibonacci(max);
-
-        System.out.println("\n");
-        System.out.printf("소수를 출력! max 범위 값은? ");
-        max = input.nextInt();
-        primeNumber(max);
-    }
-    
-    public static long factorial(int x) {
-
-        long multi = 1;
-        for (int i = 2; i <= x; i++) {
-            multi *= i;
+        System.out.print("원소 값을 출력합니다 ▷ ");
+        for (int i = 0; i < arr.length; i++) {
+            arr[i] = new Random().nextInt(9) + 1;
+            System.out.print(arr[i] + " ");
         }
-        return multi;
-    }
 
-    public static void fibonacci(int max) {
-
-        int x = 1;
-        int y = 1;
-        int result = 1;
-
-        System.out.printf("%d ", x);
-        while (result <= max) {
-            System.out.print(result + " ");
-            result = x + y;
-            x = y;
-            y = result;
-        }
-    }
-
-    public static void primeNumber(int max) {
-
-        boolean isPrime = true;
-
-        for (int i = 2; i <= max; i++) {
-            isPrime = true;
-            for (int j = 2; j * j <= i; j++) {
-                if (i % j == 0) {
-                    isPrime = false;
-                    break;
-                }
-            }
-            if (isPrime) {
-                System.out.print(i + " ");
-            }
-        }
+        System.out.println();
     }
 }
