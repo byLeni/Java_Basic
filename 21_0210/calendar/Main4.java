@@ -15,7 +15,6 @@ import java.time.LocalDate;
 
 public class Main4 {
     public static void main(String[] args) {
-        // LocalDate today = LocalDate.of(2021, 02, 01);
 
         final int YEAR = 2021;
         final int DAY = 01;
@@ -26,18 +25,16 @@ public class Main4 {
             drawMonth(mon);
         }
 		
-		// Local과 TextStyle 클래스를 쓰기 위해서는 위에 import 주석을 해제해야 합니다.
-		
 		/*
 		* 메소드 확인용 연습 코드
 		*/
-		
-        // Locale locale = Locale.getDefault();
-
+        
         // 객체의 요일을 출력
         // System.out.println(today.getDayOfWeek().name());
-
+        
         // 객체의 요일을 원하는 스타일로 출력
+		// Local과 TextStyle 클래스를 쓰기 위해서는 위에 import 주석을 해제해야 합니다.
+        // Locale locale = Locale.getDefault();
         // System.out.println(today.getDayOfWeek().getDisplayName(TextStyle.SHORT, locale));
         /*
          * 객체의 번호 출력
