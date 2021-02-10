@@ -30,8 +30,8 @@ public class Main {
                 break;
         }
 
-        System.out.print(drink.getName());
-        System.out.println(drink.getPrice());
+        System.out.println("주문하신 ★" + drink.getName() + "★ 나왔습니다!");
+        System.out.println(drink.getPrice() + "원 입니다!");
 
         input.close();
     }
