@@ -64,15 +64,10 @@ public class Main4 {
 
         // 날짜 표기
         int days = month.lengthOfMonth();
-        int isNext = 7 - space;
-        if (isNext == 0) {
-            isNext = 7;
-        }
         for (int i = 1; i <= days; i++) {
             System.out.printf("%02d ", i);
-            if (i % isNext == 0) {
+            if ((i + space) % 7 == 0) {
                 System.out.println();
-                isNext += 7;
             }
         }
         System.out.println();
